@@ -1,0 +1,13 @@
+object FrmBase: TFrmBase
+  Left = 0
+  Top = 0
+  Caption = 'FrmBase'
+  ClientHeight = 570
+  ClientWidth = 380
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  DesignerMasterStyle = 3
+end
