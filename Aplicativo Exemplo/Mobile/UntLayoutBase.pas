@@ -3,12 +3,25 @@ unit UntLayoutBase;
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  UntBase;
+  UntBase,
+
+  FMX.Controls,
+  FMX.Dialogs,
+  FMX.Forms,
+  FMX.Graphics,
+  FMX.StdCtrls,
+  FMX.Types,
+
+  System.Classes,
+  System.SysUtils,
+  System.Types,
+  System.UITypes,
+  System.Variants, FMX.Objects, FMX.Layouts;
 
 type
   TFrmLayoutBase = class(TFrmBase)
+    lytBase: TLayout;
+    rctClient: TRectangle;
   private
     { Private declarations }
   public

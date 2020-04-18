@@ -375,9 +375,22 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="UntBase.pas">
-            <Form>Form1</Form>
+            <Form>FrmBase</Form>
             <FormType>fmx</FormType>
         </DCCReference>
+        <DCCReference Include="UntLayoutBase.pas">
+            <Form>FrmLayoutBase</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="UntInfoUsuario.pas">
+            <Form>FrmLayoutBase1</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="UntPrincipal.pas">
+            <Form>FrmPrincipal</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="Utils\UntLib.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -492,15 +505,15 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiFile">
-                    <Platform Name="Android">
-                        <RemoteName>libRestaurantesMoveis.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteName>libRestaurantesMoveis.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

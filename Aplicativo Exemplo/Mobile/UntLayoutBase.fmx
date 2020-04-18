@@ -1,4 +1,18 @@
 inherited FrmLayoutBase: TFrmLayoutBase
   Caption = 'FrmBase1'
   DesignerMasterStyle = 3
+  object lytBase: TLayout
+    Align = Client
+    Size.Width = 380.000000000000000000
+    Size.Height = 570.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object rctClient: TRectangle
+      Align = Client
+      Fill.Color = claWhite
+      Size.Width = 380.000000000000000000
+      Size.Height = 570.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
 end
