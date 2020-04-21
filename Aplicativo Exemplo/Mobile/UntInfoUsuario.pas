@@ -8,7 +8,7 @@ uses
   UntLayoutBase, FMX.Objects, FMX.Layouts;
 
 type
-  TFrmLayoutBase1 = class(TFrmLayoutBase)
+  TFrmInfoUsuario = class(TFrmLayoutBase)
   private
     { Private declarations }
   public
@@ -16,7 +16,7 @@ type
   end;
 
 var
-  FrmLayoutBase1: TFrmLayoutBase1;
+  FrmInfoUsuario: TFrmInfoUsuario;
 
 implementation
 
