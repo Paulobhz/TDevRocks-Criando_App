@@ -52,7 +52,7 @@ end;
 
 procedure TFrmBase.ComboBoxEnter(Sender: TObject);
 begin
-  TComboBox(Sender).Dropdown;
+  //TComboBox(Sender).Dropdown;
 end;
 
 end.
