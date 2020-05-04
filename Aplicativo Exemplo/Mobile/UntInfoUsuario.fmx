@@ -1,4 +1,14 @@
 inherited FrmInfoUsuario: TFrmInfoUsuario
   Caption = 'FrmInfoUsuario'
   DesignerMasterStyle = 3
+  inherited lytBase: TLayout
+    inherited rctClient: TRectangle
+      object Button1: TButton
+        Position.X = 280.000000000000000000
+        Position.Y = 56.000000000000000000
+        TabOrder = 0
+        Text = 'USer'
+      end
+    end
+  end
 end

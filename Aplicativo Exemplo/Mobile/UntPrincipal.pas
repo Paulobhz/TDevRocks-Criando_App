@@ -28,15 +28,12 @@ uses
 
 type
   TFrmPrincipal = class(TFrmBase)
-    tbCtrlMain: TksTabControl;
-    tbItemLogin: TksTabItem;
-    tbItemMain: TksTabItem;
     mtvMenu: TMultiView;
     rctFundoMenu: TRectangle;
     imgMenu: TImageList;
-    ListBox1: TListBox;
+    lstboxMenu: TListBox;
     rctSair: TRectangle;
-    Glyph1: TGlyph;
+    glySair: TGlyph;
     lblSair: TLabel;
     lbiPerfil: TListBoxItem;
     ListBoxItem2: TListBoxItem;
@@ -47,6 +44,19 @@ type
     Label1: TLabel;
     lytPerfil: TLayout;
     ListBoxItem1: TListBoxItem;
+    tbCtrlMain: TksTabControl;
+    tbItemLogin: TksTabItem;
+    tbItemMain: TksTabItem;
+    lytBase: TLayout;
+    rctCliente: TRectangle;
+    Button1: TButton;
+    procedure ListBoxItem2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure lstboxMenuItemClick(const Sender: TCustomListBox;
+      const Item: TListBoxItem);
+    procedure Button1Click(Sender: TObject);
+    procedure rctSairClick(Sender: TObject);
+    procedure glySairTap(Sender: TObject; const Point: TPointF);
   private
     { Private declarations }
   public
@@ -61,6 +71,8 @@ var
 implementation
 
 {$R *.fmx}
+
+uses UntInfoUsuario, UntLib;
 
 { TFrmPrincipal }
 
@@ -91,7 +103,59 @@ begin
   begin
     rctCliente.AddObject(TRectangle(oLayOutBase));
     mtvMenu.HideMaster;
+    mtvMenu.Visible := False;
   end;
+end;
+
+procedure TFrmPrincipal.Button1Click(Sender: TObject);
+begin
+  inherited;
+  mtvMenu.ShowMaster;
+  mtvMenu.Visible := true;
+end;
+
+procedure TFrmPrincipal.FormCreate(Sender: TObject);
+begin
+  inherited;
+  tbCtrlMain.TabPosition := TKsTabBarPosition.ksTbpNone;
+  tbCtrlMain.ActiveTab   := tbItemLogin;
+  mtvMenu.HideMaster;
+  mtvMenu.Visible        := False;
+end;
+
+procedure TFrmPrincipal.glySairTap(Sender: TObject; const Point: TPointF);
+begin
+  inherited;
+  rctSairClick(Sender);
+end;
+
+procedure TFrmPrincipal.ListBoxItem2Click(Sender: TObject);
+begin
+  inherited;
+  AbrirForm(TFrmInfoUsuario);
+  Tlibrary.MudarAba(tbCtrlMain,tbItemMain);
+end;
+
+procedure TFrmPrincipal.lstboxMenuItemClick(const Sender: TCustomListBox;
+  const Item: TListBoxItem);
+Var
+  i : Integer;
+begin
+  inherited;
+  for I := 0 to Pred(lstboxMenu.Items.Count) do
+    begin
+      lstboxMenu.ListItems[I].ImageIndex := 1;
+    end;
+  Item.ImageIndex := 0;
+end;
+
+procedure TFrmPrincipal.rctSairClick(Sender: TObject);
+begin
+  inherited;
+  ShowMessage('Logoff Efeturato');
+  mtvMenu.HideMaster;
+  mtvMenu.Visible := False;
+  TLibrary.MudarAba(tbCtrlMain,tbItemLogin);
 end;
 
 end.
